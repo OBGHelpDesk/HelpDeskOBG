@@ -15,5 +15,5 @@ Paleta:
   4d4d4d
 
 Fonty:
-  Nadpisy - https://fonts.google.com/specimen/Roboto?preview.text=OBG%20Help&query=roboto
-  Text - https://fonts.google.com/specimen/Zilla+Slab
+  Nadpisy - https://fonts.google.com/specimen/Roboto?query=roboto
+  Text - https://fonts.google.com/specimen/Domine?stroke=Serif
