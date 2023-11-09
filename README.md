@@ -7,3 +7,13 @@ InfinityFree údaje:
   Heslo: obgHelp*
 
 Maturitní okruhy: https://sstebrnocz-my.sharepoint.com/:x:/g/personal/58095vorac_student_sstebrno_cz/EZVEa9nxo7VNhB78zAt0xP8BgUZRLCyQ9tTpNKDWwqq3ww?e=kKno2g
+
+Paleta:
+  ffee32
+  ffd100
+  202020
+  4d4d4d
+
+Fonty:
+  Nadpisy - Roboto
+  Text - Zilla Slab
