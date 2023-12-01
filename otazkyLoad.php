@@ -21,7 +21,7 @@ $result = $conn->query($sql);
             // output data of each row
             while($row = $result->fetch_assoc()) {
             echo"<h2 id='". $row['ID']."'>". $row["predmet"] . $row["ID"] ." - ". $$row["nazev"]." </h2>";
-            echo "<p>".$row["otazka"] ."/p>"
+            echo "<p>".$row["otazka"] ."/p>";
             }
         }
 
