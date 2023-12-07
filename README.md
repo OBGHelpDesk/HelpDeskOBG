@@ -15,13 +15,15 @@ https://sstebrnocz-my.sharepoint.com/:x:/g/personal/58095vorac_student_sstebrno_
 https://sstebrnocz-my.sharepoint.com/:x:/g/personal/58095vorac_student_sstebrno_cz/EUUwB1qixRdIiQz0ek9NIAEB0_0kDmERR0QwlR4MRnpqaA?e=Ga0YnA
 
 ## Paleta
-ffee32
+#ffee32
 
-ffd100
+#ffd100
 
-202020
+#202020
 
-4d4d4d
+#4d4d4d
+
+
 
 ## Fonty
 Nadpisy - https://fonts.google.com/specimen/Roboto?query=roboto
