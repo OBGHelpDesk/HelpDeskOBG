@@ -1,9 +1,9 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #4d4d4d;
@@ -12,7 +12,7 @@ body{
     overflow-y: scroll;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     width: 0px;
 }
 
@@ -20,7 +20,7 @@ body::-moz-scrollbar {
     width: 0px;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
@@ -28,13 +28,13 @@ body::-moz-scrollbar-thumb {
     background-color: transparent;
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     body {
-        overflow:hidden;
+        overflow: hidden;
     }
 }
 
-.bg{
+.bg {
     position: fixed;
     left: 0;
     right: 0;
@@ -48,17 +48,17 @@ body::-moz-scrollbar-thumb {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
-.nadpis{
+.nadpis {
     color: #202020;
     margin: 0;
     background-color: #ffd100;
     font-weight: 700;
 }
 
-.nadpis h1{
+.nadpis h1 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin: auto;
@@ -66,12 +66,12 @@ body::-moz-scrollbar-thumb {
     font-weight: 900;
 }
 
-.nadpis li{
+.nadpis li {
     display: inline;
     margin: 5px;
 }
 
-.navbar{
+.navbar {
     overflow: hidden;
     background-color: #d8b000;
 }
@@ -88,59 +88,60 @@ body::-moz-scrollbar-thumb {
 }
 
 
-.navbar a::after{
-    content:'';
+.navbar a::after {
+    content: '';
     position: absolute;
     width: 100%;
-    transform:scaleX(0);
+    transform: scaleX(0);
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color:#202020;
+    background-color: #202020;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
     border-radius: 150px;
 }
 
-.navbar a:hover::after{
+.navbar a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.navbar input[type=text]{
+.navbar input[type=text] {
     float: right;
     padding: 10px;
     border: none;
     font-size: 18px;
 }
 
-.navbar .vyhledavani{
+.navbar .vyhledavani {
     float: right;
 }
 
-.navbar .vyhledavani button{
-    float:  right;
+.navbar .vyhledavani button {
+    float: right;
     padding: 12.5px;
     border-radius: 0;
     border: 0;
 }
-.navbar .vyhledavani button:hover{
+
+.navbar .vyhledavani button:hover {
     background-color: #202020;
     color: white;
 }
 
 
-.vyhledavani input{
+.vyhledavani input {
     width: 250px;
 }
 
 
-.pole{
+.pole {
     color: #202020;
     height: 10px;
 }
 
-.pole .levaCast{
+.pole .levaCast {
     float: left;
     width: 68%;
     background-color: white;
@@ -148,14 +149,15 @@ body::-moz-scrollbar-thumb {
     margin: 1%;
 }
 
-.pole .levaCast h2{
+.pole .levaCast h2 {
     text-align: center;
 }
-.pole .levaCast p{
+
+.pole .levaCast p {
     margin: 10px;
 }
 
-.pole .temata{
+.pole .temata {
     float: right;
     width: 30%;
     background-color: white;
@@ -164,7 +166,7 @@ body::-moz-scrollbar-thumb {
     border-radius: 15px 0 0 15px;
 }
 
-.pole .temata p{
+.pole .temata p {
     padding: 10px;
     margin: 0;
     border-color: #202020;
@@ -172,31 +174,31 @@ body::-moz-scrollbar-thumb {
     border-top: 1px rgb(235, 235, 235) solid;
 }
 
-.pole .temata p:last-child{
+.pole .temata p:last-child {
     border-radius: 0 0 0 15px;
 }
 
-.pole .temata p:first-child{
+.pole .temata p:first-child {
     border-radius: 15px 0 0 0;
 }
 
-.pole .temata ul{
+.pole .temata ul {
     list-style-type: none;
     text-align: center;
     padding: 0;
     margin: 0;
 }
 
-.pole .temata li{
+.pole .temata li {
     text-align: center;
     text-decoration: none;
 }
 
-.pole .temata p:hover{
+.pole .temata p:hover {
     background-color: #e9e9e9;
 }
 
-.pole .temata li a{
+.pole .temata li a {
     text-decoration: none;
     color: #202020;
 }
@@ -208,11 +210,26 @@ body::-moz-scrollbar-thumb {
 .clicked {
     background-color: #ddd;
 }
-#swaChoose, #pogChoose, #posChoose, #prgChoose{
+
+#swaChoose,
+#pogChoose,
+#posChoose,
+#prgChoose {
     display: none;
 }
 
-footer{
+@media screen and (max-width: 1200px) {
+
+    #swaChoose,
+    #pogChoose,
+    #posChoose,
+    #prgChoose {
+        overflow: auto;
+        height: 300px
+    }
+}
+
+footer {
     text-align: center;
     background-color: #202020;
     color: white;
@@ -223,7 +240,7 @@ footer{
     border-radius: 15px 0px 0px 15px;
 }
 
-.pravaCast{
+.pravaCast {
     position: sticky;
-    top:5px;
+    top: 5px;
 }
