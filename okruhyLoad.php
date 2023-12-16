@@ -27,7 +27,12 @@ else {
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<li><p>". $row['ID']. ".". " " . $row['Nazev']. "</p></li>". "<br>";
+            echo "<li>
+                        <a href='#" . $row['Nazev']."'>
+                    <p>" . $row['ID']. ". " . $row['Nazev']."
+                    </p>
+                        </a>
+                </li>";
             }
         }
         ?>
@@ -46,7 +51,12 @@ else {
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<li><p>". $row['ID']. ".". " " . $row['Nazev']. "</p></li>". "<br>";
+            echo "<li>
+                        <a href='#" . $row['Nazev']."'>
+                    <p>" . $row['ID']. ". " . $row['Nazev']."
+                    </p>
+                        </a>
+                </li>";
             }
         }
         ?>
@@ -64,7 +74,12 @@ else {
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<li><p>". $row['ID']. ".". " " . $row['Nazev']. "</p></li>". "<br>";
+            echo "<li>
+                        <a href='#" . $row['Nazev']."'>
+                    <p>" . $row['ID']. ". " . $row['Nazev']."
+                    </p>
+                        </a>
+                </li>";
             }
         }
         ?>
@@ -81,10 +96,14 @@ else {
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<li><p>". $row['ID']. ".". " " . $row['Nazev']. "</p></li>". "<br>";
+            echo "<li>
+                        <a href='#" . $row['Nazev']."'>
+                    <p>" . $row['ID']. ". " . $row['Nazev']."
+                    </p>
+                        </a>
+                </li>";
             }
         }
-
         $conn->close();
         ?>
     </ul>

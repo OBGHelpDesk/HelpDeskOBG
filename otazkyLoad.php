@@ -14,15 +14,34 @@ if ($conn->connect_error) {
 else {
     // echo "Connected successfully";
 }
-$sql='SELECT ID, otazka, predmet from Otazky WHERE predmet="pog" DESC BY ID';
+$sql='SELECT ID, Nazev, Subject, Text FROM SWA_POG WHERE 1
+';
 $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo"<h2 id='". $row['ID']."'>". $row["predmet"] . $row["ID"] ." - ". $$row["nazev"]." </h2>";
-            echo "<p>".$row["otazka"] ."/p>";
+
+                echo"<h2 class='' id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
+                echo "<p>". $row["Text"] ."</p>";
+                echo "<a href='/Wordy/'". $row["Subject"] . $row["ID"] .">odkaz</a>";
             }
         }
+
+
+$sql='SELECT ID, Nazev, Subject, Text FROM POS_PRG WHERE 1
+';
+$result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                
+                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
+                echo "<p>".$row["Text"] ."</p>";
+                echo "<a href='/Wordy/'". $row["Subject"] . $row["ID"] .'>odkaz</a>';
+            }
+        }
+
 
 ?>

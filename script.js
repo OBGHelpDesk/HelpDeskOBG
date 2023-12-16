@@ -1,16 +1,47 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let swaButton = document.getElementById("swaClick")
-    let pogButton = document.getElementById("pogClick")
-    let posButton = document.getElementById("posClick")
-    let prgButton = document.getElementById("prgClick")
+    const swaButton = document.getElementById("swaClick")
+    const pogButton = document.getElementById("pogClick")
+    const posButton = document.getElementById("posClick")
+    const prgButton = document.getElementById("prgClick")
+
+    const predmetyButton = document.getElementById("predmetyClick")
 
     const findInput = document.getElementById("findInput")
     let parametr = "";
 
-    let swaOkruhy = document.getElementById("swaChoose")
-    let pogOkruhy = document.getElementById("pogChoose")
-    let posOkruhy = document.getElementById("posChoose")
-    let prgOkruhy = document.getElementById("prgChoose")
+    const swaOkruhy = document.getElementById("swaChoose")
+    const pogOkruhy = document.getElementById("pogChoose")
+    const posOkruhy = document.getElementById("posChoose")
+    const prgOkruhy = document.getElementById("prgChoose")
+
+    // Get all elements with the class "tag"
+    const tags = document.querySelectorAll('.tag');
+
+    // Add event listeners to each tag
+    tags.forEach(tag => {
+    // Add hover effect
+        tag.addEventListener('mouseover', () => {
+            tag.classList.add('highlight');
+        });
+
+        // Remove hover effect
+        tag.addEventListener('mouseout', () => {
+            tag.classList.remove('highlight');
+        });
+
+        // Add click effect
+        tag.addEventListener('click', (event) => {
+            // Toggle the "clicked" class to remember the state
+            tags.forEach(tag => {
+                if(!event.target.classList.contains("clicked")){
+                    tag.classList.remove("clicked");
+                    tag.classList.remove("highlight");
+                }
+            })
+            tag.classList.toggle('clicked');
+        });
+
+    });
 
     swaButton.addEventListener("click", function() {
         if (swaOkruhy.style.display == "block")
@@ -78,15 +109,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function Find()
     {
-        let filter, li, p, i, txtValue;
+        let filter, li, a, i, txtValue;
         const input = document.getElementById("findInput");
         filter = input.value.toUpperCase();
         const ul = document.getElementById(parametr);
         li = ul.getElementsByTagName("li");
 
         for (i = 0; i < li.length; i++){
-            p = li[i].getElementsByTagName("p")[0];
-            txtValue = p.textContent || p.innerText;
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
             if(txtValue.toUpperCase().indexOf(filter) > -1){
                 li[i].style.display = "block";
             }else{
@@ -94,5 +125,39 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+
+    const input = document.getElementById("findInput");
+    input.addEventListener("keypress", function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+        }
+    });
+
+    document.addEventListener("mouseover", () => {
+        
+    })
+
+    
+
+    WidthResize();
+
+    function WidthResize()
+    {
+        let pole = document.getElementById("pole");
+        let body = document.body;
+        let html = document.documentElement;
+        let height = Math.max(body.getBoundingClientRect().height,html.getBoundingClientRect().height) - 89;
+
+        let levacast = document.querySelector(".levaCast");
+        let levaHeight = levacast.offsetHeight;
+
+
+        pole.style.height = levaHeight +"px";
+        console.log(levaHeight);
+        console.log("resized");
+    }
+
+    window.onresize = WidthResize;
+
 });
 
