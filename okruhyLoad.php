@@ -28,10 +28,9 @@ else {
             // output data of each row
             while($row = $result->fetch_assoc()) {
             echo "<li>
-                        <a href='#" . $row['Nazev']."'>
-                    <p>" . $row['ID']. ". " . $row['Nazev']."
-                    </p>
-                        </a>
+                    <a href='#" . $row['Nazev']."'>
+                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                    </a>
                 </li>";
             }
         }
@@ -52,10 +51,9 @@ else {
             // output data of each row
             while($row = $result->fetch_assoc()) {
             echo "<li>
-                        <a href='#" . $row['Nazev']."'>
-                    <p>" . $row['ID']. ". " . $row['Nazev']."
-                    </p>
-                        </a>
+                    <a href='#" . $row['Nazev']."'>
+                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                    </a>
                 </li>";
             }
         }
@@ -75,10 +73,9 @@ else {
             // output data of each row
             while($row = $result->fetch_assoc()) {
             echo "<li>
-                        <a href='#" . $row['Nazev']."'>
-                    <p>" . $row['ID']. ". " . $row['Nazev']."
-                    </p>
-                        </a>
+                    <a href='#" . $row['Nazev']."'>
+                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                    </a>
                 </li>";
             }
         }
@@ -97,10 +94,9 @@ else {
             // output data of each row
             while($row = $result->fetch_assoc()) {
             echo "<li>
-                        <a href='#" . $row['Nazev']."'>
-                    <p>" . $row['ID']. ". " . $row['Nazev']."
-                    </p>
-                        </a>
+                    <a href='#" . $row['Nazev']."'>
+                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                    </a>
                 </li>";
             }
         }

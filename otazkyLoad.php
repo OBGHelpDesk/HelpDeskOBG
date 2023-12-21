@@ -22,9 +22,9 @@ $result = $conn->query($sql);
             // output data of each row
             while($row = $result->fetch_assoc()) {
 
-                echo"<h2 class='' id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
+                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
                 echo "<p>". $row["Text"] ."</p>";
-                echo "<a href='/Wordy/'". $row["Subject"] . $row["ID"] .">odkaz</a>";
+                echo "<a href='/Wordy/". $row["Subject"] . $row["ID"] .".docx'download><span class='material-symbols-outlined'>download</span>Stáhnout soubor</a>";
             }
         }
 
@@ -39,9 +39,7 @@ $result = $conn->query($sql);
                 
                 echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
                 echo "<p>".$row["Text"] ."</p>";
-                echo "<a href='/Wordy/'". $row["Subject"] . $row["ID"] .'>odkaz</a>';
+                echo "<a href='/Wordy/' ". $row["Subject"] . $row["ID"] ."download><span class='material-symbols-outlined'>download</span>Stáhnout soubor</a>";
             }
         }
-
-
 ?>

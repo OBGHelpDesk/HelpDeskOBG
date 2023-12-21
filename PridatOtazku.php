@@ -60,16 +60,10 @@ if ($requestMethod == "POST") {
         $targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-        
+        /*
         // Check if the file already exists
         if (file_exists($targetFile)) {
             echo "Sorry, the file already exists.";
-            $uploadOk = 0;
-        }
-        
-        /* Check file size (you can set your own limit)
-        if ($_FILES["fileToUpload"]["size"] > 50000000000) {
-            echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }*/
         
