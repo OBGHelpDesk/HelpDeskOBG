@@ -3,6 +3,9 @@
     <div class="nadpis">
         <h1>OBG HelpDesk</h1>
 
+        <a class="login" href="login.php">Přihlásit</a>
+        
+
         <div class="navbar">
             <a href="index.php">Home</a>
             <a href="about.php">About</a>

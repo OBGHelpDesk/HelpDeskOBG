@@ -1,6 +1,13 @@
 <?php
-// Check if the form was submitted
 
+if (!isset($_COOKIE['helpdesk_logedin'])){
+    echo "<script> alert('přihlásit plz :('); </script>";
+    sleep(2);
+    // die();
+}
+
+
+// Check if the form was submitted
 $requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
 if ($requestMethod == "POST") {
 
@@ -27,11 +34,11 @@ if ($requestMethod == "POST") {
         $sql = "UPDATE POS_PRG SET Text = '".$_POST['text']."' WHERE POS_PRG.ID = ".$_POST["cislo"];
 
 
-        if ($conn->query($sql) === true) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: ";
-        }
+        if (("POS" == $_POST['predmet'] && $_POST["cislo"] < 13) || ("PRG" == $_POST['predmet'] && $_POST["cislo"] > 12)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: ";
+            }
     }
 
         echo ("SWA" == $_POST['predmet'] || "POG" == $_POST['predmet']);
@@ -41,12 +48,15 @@ if ($requestMethod == "POST") {
 
 
         if ($conn->query($sql) === true) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: ";
+            if (("SWA" == $_POST['predmet'] && $_POST["cislo"] > 9 && $_POST["cislo"] < 24) || ("POG" == $_POST['predmet'] && $_POST["cislo"] < 10)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: ";
+            }
         }
 
     }
+    echo "spravit echo";
     $conn->close();
     
 
@@ -96,14 +106,16 @@ if ($requestMethod == "POST") {
 
     <style>
         .pridaniOtazky {
+            position:absolute;
             color: black;
-            background-color: #fff;
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 300px;
-            margin: auto;
-            margin-top:100px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
             display:flex;
             flex-direction:column;
             position:sticky;
@@ -116,6 +128,8 @@ if ($requestMethod == "POST") {
 
         input[type="text"], input[type="number"]{
             width:250px;
+            height: 30px;
+            border-radius:5px;
         }
 
         input[type="file"] {
@@ -130,7 +144,7 @@ if ($requestMethod == "POST") {
             color: #000;
             padding: 10px 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 15px;
             cursor: pointer;
             width:120px;
             font-size:20px;
@@ -152,7 +166,7 @@ if ($requestMethod == "POST") {
         }
 
         select {
-            height: 21px;
+            height: 30px;
             width: 250px;
         }
     </style>
@@ -164,7 +178,7 @@ if ($requestMethod == "POST") {
                 <div>
                     <label for="cislo">Číslo otázky:</label>
                     <br>
-                    <input id="cislo" name="cislo" type="number">
+                    <input id="cislo" name="cislo" type="number" min="1" max="28">
                 </div>
                 <div>
                     <label for="text">Text:</label>

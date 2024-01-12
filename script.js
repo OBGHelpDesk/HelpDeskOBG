@@ -133,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    document.addEventListener("mouseover", () => {
+    /*document.addEventListener("mouseover", () => {
         
-    })
+    })*/
 
     
 
@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         pole.style.height = levaHeight +"px";
-        console.log(levaHeight);
-        console.log("resized");
+        /*console.log(levaHeight);
+        console.log("resized");*/
     }
 
     window.onresize = WidthResize;

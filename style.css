@@ -109,9 +109,10 @@ body::-moz-scrollbar-thumb {
 
 .navbar input[type=text]{
     float: right;
-    padding: 10px;
+    padding: 0px;
     border: none;
     font-size: 18px;
+    height: 41px;
 }
 
 .navbar .vyhledavani{
@@ -231,6 +232,13 @@ body::-moz-scrollbar-thumb {
 @media screen and (max-width: 1200px){
     #swaChoose, #pogChoose, #posChoose, #prgChoose{
     overflow: auto;
+    height: 600px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #swaChoose, #pogChoose, #posChoose, #prgChoose{
+    overflow: auto;
     height: 300px;
     }
 }
@@ -263,4 +271,20 @@ a{
   'GRAD' 0,
   'opsz' 24
 
+}
+
+.login{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 10px;
+    font-weight: bold;
+    background: white;
+    border-radius: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.login:hover{
+    background: rgb(204, 204, 204);
 }
