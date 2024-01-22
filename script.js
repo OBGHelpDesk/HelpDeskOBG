@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const posOkruhy = document.getElementById("posChoose")
     const prgOkruhy = document.getElementById("prgChoose")
 
+    const topbutton = document.getElementById("topBtn");
+
     // Get all elements with the class "tag"
     const tags = document.querySelectorAll('.tag');
 
@@ -133,9 +135,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    document.addEventListener("mouseover", () => {
+    /*document.addEventListener("mouseover", () => {
         
-    })
+    })*/
 
     
 
@@ -153,11 +155,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         pole.style.height = levaHeight +"px";
-        console.log(levaHeight);
-        console.log("resized");
+        /*console.log(levaHeight);
+        console.log("resized");*/
     }
 
     window.onresize = WidthResize;
 
+
+    /*scoll up*/
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction(){
+        if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+            topbutton.style.display = "flex";
+        }else{
+            topbutton.style.display = "none";
+        }
+    }
 });
 

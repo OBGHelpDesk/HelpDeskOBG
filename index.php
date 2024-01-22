@@ -25,6 +25,10 @@
             </div>
         </div>
 
+        <a id="topBtn" href="#top" title="Go to top">
+        <div class="pointerUp">☝</div>
+        </a>
+
     </body>
 <!--  
 <footer>

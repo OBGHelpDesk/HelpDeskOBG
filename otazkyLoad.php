@@ -14,8 +14,7 @@ if ($conn->connect_error) {
 else {
     // echo "Connected successfully";
 }
-$sql='SELECT ID, Nazev, Subject, Text FROM SWA_POG WHERE 1
-';
+$sql='SELECT ID, Nazev, Subject, Text FROM SWA_POG WHERE 1';
 $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -28,9 +27,7 @@ $result = $conn->query($sql);
             }
         }
 
-
-$sql='SELECT ID, Nazev, Subject, Text FROM POS_PRG WHERE 1
-';
+$sql='SELECT ID, Nazev, Subject, Text FROM POS_PRG WHERE 1';
 $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
