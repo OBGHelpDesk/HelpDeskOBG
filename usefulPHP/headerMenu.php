@@ -17,7 +17,17 @@
             <a href='index.php'>Home</a>
             <a href='about.php'>About</a>
             <a href='contact.php'>Contact</a>
-            <a href='PridatOtazku.php'>Add question</a>
+
+            <?php 
+            if (isset($_COOKIE['helpdesk_logedin'])) 
+            { 
+                echo "<a href='PridatOtazku.php'>Add question</a>"; 
+            }
+            ?>
+
+            
+
+            <a href='help.php'>Need Help?</a>
 
             <div class='vyhledavani'>
                 <form action=''>

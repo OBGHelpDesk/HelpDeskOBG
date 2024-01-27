@@ -5,7 +5,8 @@
         <?php include_once "usefulPHP/headerMenu.php"; ?>
 
         <div class="pridaniOtazky">
-            <p>Kontaktujte nás na emailu: <b>gangoogabooga@gmail.com</b></p>
+            <p>Pokud máte nějaké potíže, či naleznete bug, nebojte se nás kontaktovat.</p>
+            <p>Email: <b>gangoogabooga@gmail.com</b></p>
         </div>
     </body>
     <!--  

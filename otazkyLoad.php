@@ -23,7 +23,7 @@ $result = $conn->query($sql);
 
                 echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
                 echo "<p>". $row["Text"] ."</p>";
-                echo "<a href='/Wordy/". $row["Subject"] . $row["ID"] .".docx'download><span class='material-symbols-outlined'>download</span>Stáhnout soubor</a>";
+                echo "<a class='downloadText' href='/Wordy/". $row["Subject"] . $row["ID"] .".pdf'download><span class='material-symbols-outlined'>download</span>Stáhnout ". $row["Subject"] . $row["ID"] ."</a>";
             }
         }
 
@@ -36,7 +36,7 @@ $result = $conn->query($sql);
                 
                 echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
                 echo "<p>".$row["Text"] ."</p>";
-                echo "<a href='/Wordy/' ". $row["Subject"] . $row["ID"] ."download><span class='material-symbols-outlined'>download</span>Stáhnout soubor</a>";
+                echo "<a class='downloadText' href='/Wordy/". $row["Subject"] . $row["ID"] .".pdf'download><span class='material-symbols-outlined'>download</span>Stáhnout ". $row["Subject"] . $row["ID"] ."</a>";
             }
         }
 ?>
