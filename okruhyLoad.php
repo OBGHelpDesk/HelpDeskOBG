@@ -26,13 +26,23 @@ else {
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
-            echo "<li>
-                    <a href='#" . $row['Nazev']."'>
-                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
-                    </a>
-                </li>";
+            for ($i= 1; $i <= $result->num_rows; $i++ ) {
+                $row = $result->fetch_assoc();
+                if ($i == 1) {
+                    echo "<li id='first'>";
+                } elseif ($i == $result->num_rows){
+                    echo "<li id='last'>";
+                }
+                else {
+                    echo "<li>";
+                }
+                    echo "
+                        <a href='#" . $row['Nazev']."'>
+                            <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                        </a>
+                    </li>";
             }
+            
         }
         ?>
     </ul>
@@ -49,13 +59,23 @@ else {
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
-            echo "<li>
-                    <a href='#" . $row['Nazev']."'>
-                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
-                    </a>
-                </li>";
+            for ($i= 1; $i <= $result->num_rows; $i++ ) {
+                $row = $result->fetch_assoc();
+                if ($i == 1) {
+                    echo "<li id='first'>";
+                } elseif ($i == $result->num_rows){
+                    echo "<li id='last'>";
+                }
+                else {
+                    echo "<li>";
+                }
+                    echo "
+                        <a href='#" . $row['Nazev']."'>
+                            <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                        </a>
+                    </li>";
             }
+            
         }
         ?>
     </ul>
@@ -71,13 +91,23 @@ else {
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
-            echo "<li>
-                    <a href='#" . $row['Nazev']."'>
-                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
-                    </a>
-                </li>";
+            for ($i= 1; $i <= $result->num_rows; $i++ ) {
+                $row = $result->fetch_assoc();
+                if ($i == 1) {
+                    echo "<li id='first'>";
+                } elseif ($i == $result->num_rows){
+                    echo "<li id='last'>";
+                }
+                else {
+                    echo "<li>";
+                }
+                    echo "
+                        <a href='#" . $row['Nazev']."'>
+                            <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                        </a>
+                    </li>";
             }
+            
         }
         ?>
     </ul>
@@ -92,13 +122,23 @@ else {
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
-            echo "<li>
-                    <a href='#" . $row['Nazev']."'>
-                        <p>" . $row['ID']. ". " . $row['Nazev']."</p>
-                    </a>
-                </li>";
+            for ($i= 1; $i <= $result->num_rows; $i++ ) {
+                $row = $result->fetch_assoc();
+                if ($i == 1) {
+                    echo "<li id='first'>";
+                } elseif ($i == $result->num_rows){
+                    echo "<li id='last'>";
+                }
+                else {
+                    echo "<li>";
+                }
+                    echo "
+                        <a href='#" . $row['Nazev']."'>
+                            <p>" . $row['ID']. ". " . $row['Nazev']."</p>
+                        </a>
+                    </li>";
             }
+            
         }
         $conn->close();
         ?>

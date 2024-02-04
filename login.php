@@ -1,6 +1,37 @@
 <?php
     $error = "  ";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $servername = "sql202.infinityfree.com";
+        $username = "if0_35393938";
+        $password = "c6ncH8k5zpjDi";
+        $database = "if0_35393938_passwords";
+
+        $conn = new mysqli($servername, $username, $password, $database);
+        
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = "SELECT * FROM passwords";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) { // Remove parentheses from num_rows
+            while ($row = $result->fetch_assoc()) {
+                // Use === for strict comparison to ensure both value and type match
+                if ($_POST['username'] == $row['username'] && hash('sha512', $_POST['password']) === $row['password']) { // heslo goofy ahh
+                    setcookie('helpdesk_logedin', 1, time() + 86400, "/"); // Removed extra 'e' in 'loggedin', and simplified time calculation
+                    header('Location: index.php'); // Corrected 'location' to 'Location'
+                    die();
+                }
+            }
+        }
+        
+        
+
+
+        // reseni admina
+
         $username = "admin";
         $getUsername = null;
         $getPassword = null;
@@ -13,6 +44,7 @@
         }
         
         if ($username == $getUsername && $password == $getPassword) {
+            setcookie('helpdesk_admin', 1, time() + (86400), "/"); // 86400 = 1 day
             setcookie('helpdesk_logedin', 1, time() + (86400), "/"); // 86400 = 1 day
             header('location: PridatOtazku.php');
             die();
@@ -41,6 +73,10 @@
                 </div>
                 <input id="submuit" type="submit" value="Přihlásit">
             </form>
+            <div class="registerLink">
+            <p>Nemáte účet?</p>
+            <a href="signup.php">Registrujte se!</a>
+            </div>
         </div>
     </body> 
 </html>

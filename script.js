@@ -124,6 +124,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 li[i].style.display = "block";
             }else{
                 li[i].style.display = "none";
+                
+
+                //Vytvořit block pro text 'Nic nebylo k nalezení'
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-    if (!isset($_COOKIE['helpdesk_logedin'])){
+    if (!isset($_COOKIE['helpdesk_admin'])){
         echo "<script> alert('přihlásit plz'); </script>";
         header('location: login.php');
         die();

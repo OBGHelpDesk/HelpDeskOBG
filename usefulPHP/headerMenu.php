@@ -1,7 +1,7 @@
 <div class='bg'></div>
     
     <div class='nadpis'>
-        <h1 id="top">OBG HelpDesk</h1>
+        <a href='index.php'><h1 id="top">OBG HelpDesk</h1></a>
         <?php 
         if (!isset($_COOKIE['helpdesk_logedin'])) 
         { 
@@ -19,7 +19,7 @@
             <a href='contact.php'>Contact</a>
 
             <?php 
-            if (isset($_COOKIE['helpdesk_logedin'])) 
+            if (isset($_COOKIE['helpdesk_admin'])) 
             { 
                 echo "<a href='PridatOtazku.php'>Add question</a>"; 
             }

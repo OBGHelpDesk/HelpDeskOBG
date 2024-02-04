@@ -7,7 +7,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #4d4d4d;
-    color: white;
+    color: #fff;
     font-family: 'Rethink Sans', sans-serif;
     overflow-y: scroll;
 }
@@ -56,6 +56,7 @@ body::-moz-scrollbar-thumb {
     margin: 0;
     background-color: #ffd100;
     font-weight: 700;
+
 }
 
 .nadpis h1{
@@ -64,6 +65,7 @@ body::-moz-scrollbar-thumb {
     margin: auto;
     padding: 5px;
     font-weight: 900;
+    color: #000;
 }
 
 .nadpis li{
@@ -127,7 +129,7 @@ body::-moz-scrollbar-thumb {
 }
 .navbar .vyhledavani button:hover{
     background-color: #202020;
-    color: white;
+    color: #fff;
 }
 
 
@@ -144,7 +146,7 @@ body::-moz-scrollbar-thumb {
 .pole .levaCast{
     float: left;
     width: 68%;
-    background-color: white;
+    background-color: #fff;
     border-radius: 15px;
     margin: 1%;
 }
@@ -166,10 +168,11 @@ body::-moz-scrollbar-thumb {
 .pole .temata{
     float: right;
     width: 30%;
-    background-color: white;
+    background-color: #fff;
     margin-top: 1%;
     text-align: center;
     border-radius: 15px 0 0 15px;
+    color: #000;
 }
 
 .pole .temata p{
@@ -181,19 +184,11 @@ body::-moz-scrollbar-thumb {
 }
 
 
-.pole .temata li, .pole .temata p:last-child{
-    border-radius: 0 0 0 15px;
-}
-
-.pole .temata li, .pole .temata p:first-child{
+.temata #first, .temata #pogClick, .temata #first a p{
     border-radius: 15px 0 0 0;
 }
 
-#pogOtazky:first-child li a, #swaOtazky:first-child li a, #posOtazky:first-child li a, #prgOtazky:first-child li a{
-    border-radius: 15px 0 0 0;
-}
-
-#pogOtazky:last-child li a, #swaOtazky:last-child li a, #posOtazky:last-child li a, #prgOtazky:last-child li a{
+.temata #last, .temata #prgClick, .temata #last a p{
     border-radius: 0 0 0 15px;
 }
 
@@ -245,7 +240,7 @@ body::-moz-scrollbar-thumb {
 footer{
     text-align: center;
     background-color: #202020;
-    color: white;
+    color: #fff;
     padding: 15px;
 }
 
@@ -281,7 +276,7 @@ a{
     background:rgba(255, 255, 255, 0.8);;
 
     width: 300px;
-    height: 300px;
+    height: 350px;
     text-align: center;
 
     color: black;
@@ -316,7 +311,7 @@ a{
     border-radius: 15px;
     cursor: pointer;
     position: absolute;
-    bottom: 0px;
+    bottom: 40px;
     left:50%;
     transform: translate(-50%, -50%);
 }
@@ -325,13 +320,29 @@ a{
     background-color: #d8b000;
 }
 
+.registerLink{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+.registerLink a, .registerLink p{
+    margin: 0;
+    padding: 5px 2px;
+    text-wrap:nowrap;
+}
+
 .login{
     position: absolute;
     top: 5px;
     right: 5px;
     padding: 10px;
     font-weight: bold;
-    background: white;
+    background: #fff;
     border-radius: 15px;
     color: black;
     text-decoration: none;
@@ -438,13 +449,20 @@ h1{
     width: fit-content;
     align-items: center;
     margin: 3px;
-    background: #e9e9e9;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .otazka {
     border: #e9e9e9 solid 1px;
     border-radius: 5px;
     margin: 5%;
+    padding: 20px;
+}
+
+.downloadText:hover {
+    background: #e9e9e9;
 }
 
 .material-symbols-outlined {

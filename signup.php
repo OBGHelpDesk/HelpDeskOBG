@@ -1,5 +1,4 @@
 <?php
-session_start();
 $servername = "sql202.infinityfree.com";
 $username = "if0_35393938";
 $password = "c6ncH8k5zpjDi";
@@ -22,10 +21,10 @@ function sanitize_input($input)
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $username = strtolower($_POST['username']);
-    $password = hash('sha512', $_POST['password']);
+    $password = $_POST['password'];
 
 
-    $sql = "SELECT id FROM passwords WHERE username = '{$username}'";
+    $sql = "SELECT username FROM passwords WHERE username = '$username' LIMIT 1";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $error_message = "Uživatelské jméno je již zabrané";
@@ -34,10 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $username = $conn->real_escape_string($username);
         $password = $conn->real_escape_string($password);
         $hashedPassword = hash("sha512", $password);
-        echo "jjjjjjj";
         // Use prepared statement with placeholders
         $sql = "INSERT INTO passwords (username, password) VALUES ('$username', '$hashedPassword')";
-
 
         // Execute the statement
         if ($conn->query($sql)) {
@@ -57,10 +54,8 @@ $conn->close();
 <html lang="cs">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <?php include_once "usefulPHP/head.php"; ?>
+    
     <title>Zaregistrovat</title>
 </head>
 

@@ -1,3 +1,12 @@
+<?php 
+if (!isset($_COOKIE['helpdesk_logedin'])) {
+    echo '<script> alert("Pro zobrazení obsahu se prosím přihlšte."); </script>';
+    header('location: login.php');
+    die();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="cs">
 <?php include_once "usefulPHP/head.php"; ?>
