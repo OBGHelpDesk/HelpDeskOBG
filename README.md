@@ -7,7 +7,7 @@ Maturitní helpdesk slouží jako jednotné místo pro studenty oboru IT na SŠT
 Jsou zde jak vypracované okruhy k maturitní zkoušce, tak různé tipy a triky, jak se na zkoušku připravit. 
 
 ## Zadání
-https://sstebrnocz-my.sharepoint.com/:w:/g/personal/58095vorac_student_sstebrno_cz/EZ2Vv7wKCPZHjLn0WFdaUZcB1u3fVBFse8CSFCAwm2oETg?e=7cX56K
+opent2.com/MqOAw
 
 ## InfinityFree
 Email: gangoogabooga@gmail.com
