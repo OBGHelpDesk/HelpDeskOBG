@@ -22,7 +22,7 @@ $result = $conn->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<div class='otazka'>";
                 $filename = "/Wordy/{$row["Subject"]}{$row["ID"]}.pdf";
-                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
+                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ."<br><br>". $row["Nazev"]." </h2>";
                 echo "<p>". $row["Text"] ."</p>";
                 echo "<a class='downloadText' href='$filename'download><span class='material-symbols-outlined'>download</span>Stáhnout ". $row["Subject"] . $row["ID"] ."</a>";
                 echo "</div>";
@@ -37,7 +37,7 @@ $result = $conn->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<div class='otazka'>";
                 $filename = "/Wordy/{$row["Subject"]}{$row["ID"]}.pdf";
-                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ." - ". $row["Nazev"]." </h2>";
+                echo"<h2 id='". $row['Nazev']."'>". $row["Subject"] . $row["ID"] ."<br><br>". $row["Nazev"]." </h2>";
                 echo "<p>". $row["Text"] ."</p>";
                 echo "<a class='downloadText' href='$filename'download><span class='material-symbols-outlined'>download</span>Stáhnout ". $row["Subject"] . $row["ID"] ."</a>";
                 echo "</div>";

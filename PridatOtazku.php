@@ -35,10 +35,10 @@
 
 
             if (("POS" == $_POST['predmet'] && $_POST["cislo"] < 13) || ("PRG" == $_POST['predmet'] && $_POST["cislo"] > 12)) {
-                    echo "Record updated successfully";
+                    // echo "Record updated successfully";
                     $conn->query($sql);
                 } else {
-                    echo "Error updating record: ";
+                    echo "<script>alert('Error updating record: ');</script>";
                 }
         }
 
@@ -48,10 +48,10 @@
 
 
             if (("SWA" == $_POST['predmet'] && $_POST["cislo"] > 9 && $_POST["cislo"] < 24) || ("POG" == $_POST['predmet'] && $_POST["cislo"] < 10)) {
-                echo "Record updated successfully";
+                // echo "Record updated successfully";
                     $conn->query($sql);
                 } else {
-                    echo "Error updating record: ";
+                    echo "<script>alert('Error updating record: ');</script>";
                 }
             }
         $conn->close();
@@ -69,20 +69,21 @@
             // Allow only certain file formats (you can customize this list)
             $allowedFormats = array("docx","doc","ofd","pdf");
             if (!in_array($imageFileType, $allowedFormats)) {
-                echo "Sorry, only word files are allowed.";
+                echo "<script>alert('Sorry, only .docx, .doc, .ofd, .pdf files are allowed.');</script>";
+
                 $uploadOk = 0;
             }
             
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.";
+                // echo "Sorry, your file was not uploaded.";
             } else {
                 // Move the file to the specified directory
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
                     echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
                     rename($targetFile, $targetDir.$_POST['predmet'].$_POST['cislo'].".".$imageFileType);
                 } else {
-                    echo "Sorry, there was an error uploading your file.";
+                    echo "<script>alert('Sorry, there was an error uploading your file. ');</script>";
                 }
             }
         }
@@ -95,6 +96,8 @@
 
 <body>
 <?php include_once "usefulPHP/headerMenu.php"; ?>
+</div>
+            </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="pridaniOtazky">
         <h1>Přídat otázku</h1>
         <div>

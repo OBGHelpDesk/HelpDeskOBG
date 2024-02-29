@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = strtolower($_POST['username']);
     $password = $_POST['password'];
 
-
     $sql = "SELECT username FROM passwords WHERE username = '$username' LIMIT 1";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -52,40 +51,45 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <?php include_once "usefulPHP/head.php"; ?>
-    
+    <script src="cookies.js"></script>
     <title>Zaregistrovat</title>
 </head>
 
 <body>
-
-    <div class='popupContainer' id='signupForm'>
-        <div class='popup'>
-            <h2>Přihlášení</h2>
-            <?php
-            // Zobrazit úspěšnou nebo chybovou zprávu, pokud existuje
-            if (isset($success_message)) {
-                echo "<p style='color: green;'>$success_message</p>";
-            }
-            if (isset($error_message)) {
-                echo "<p style='color: red;'>$error_message</p>";
-            }
-            ?>
-            <form id='loginForm' method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-                <div class='formGroup'>
-                    <label for='username'>Uživatelské jméno:</label>
-                    <input type='text' id='username' name='username' required>
-                </div>
-                <div class='formGroup'>
-                    <label for='password'>Heslo:</label>
-                    <input type='password' id='password' name='password' required>
-                </div>
-                <div class='formGroup'>
-                    <button type='submit'>Zaregistrovat</button>
-                </div>
-            </form>
+    <?php include_once "usefulPHP/headerMenu.php"; ?>
+    </div>
+            </div>
+    <div class='signup_pole'>
+        <h1>Registrace</h1>
+        <?php
+        // Zobrazit úspěšnou nebo chybovou zprávu, pokud existuje
+        if (isset($success_message)) {
+            echo "<p style='color: green;'>$success_message</p>";
+        }
+        if (isset($error_message)) {
+            echo "<p style='color: red;'>$error_message</p>";
+        }
+        ?>
+        <form id='loginForm' method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <div class='input-group'>
+                <label for='username'>Uživatelské jméno:</label>
+                <input type='text' id='username' name='username' required>
+            </div>
+            <div class='input-group'>
+                <label for='password'>Heslo:</label>
+                <input type='password' onchange="validatePassword" id='password' name='password' required>
+            </div>
+            <div class='input-group'>
+                <label for='password'>Potvrzení hesla:</label>
+                <input type='password' id='password2' name='password2' required>
+            </div>
+            <input id="submuit"  type="submit" value="Zaregistrovat">
+        </form>
+        <div class="registerLink">
+        <p>Máte účet?</p>
+        <a href="login.php">Přihlaste se!</a>
         </div>
     </div>
 </body>

