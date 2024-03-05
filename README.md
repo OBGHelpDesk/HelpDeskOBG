@@ -4,7 +4,9 @@
 https://obg-helpdesk.great-site.net/index.php
 
 Přihlašovací údaje:
+
 Username: admin
+
 Password: 123456
 
 Maturitní helpdesk slouží jako jednotné místo pro studenty oboru IT na SŠTE pro přípravu na maturitní zkoušku.
