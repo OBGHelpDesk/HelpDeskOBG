@@ -1,0 +1,175 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Počítač: sql202.infinityfree.com
+-- Vytvořeno: Stř 13. bře 2024, 09:47
+-- Verze serveru: 10.4.17-MariaDB
+-- Verze PHP: 7.2.22
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Databáze: `if0_35393938_OBG_Helpdesk`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `aktuality`
+--
+
+CREATE TABLE `aktuality` (
+  `id` int(11) NOT NULL,
+  `nazev` varchar(255) COLLATE utf8_czech_ci NOT NULL DEFAULT 'Název',
+  `aktualita` text COLLATE utf8_czech_ci NOT NULL DEFAULT 'Content',
+  `datum` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+--
+-- Vypisuji data pro tabulku `aktuality`
+--
+
+INSERT INTO `aktuality` (`id`, `nazev`, `aktualita`, `datum`) VALUES
+(1, 'Odevdzání projektů ', 'Všechny projekty byly odevzdány', '2024-02-29');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `POS_PRG`
+--
+
+CREATE TABLE `POS_PRG` (
+  `ID` int(11) NOT NULL,
+  `Nazev` mediumtext COLLATE utf8_czech_ci NOT NULL,
+  `Subject` varchar(3) COLLATE utf8_czech_ci NOT NULL,
+  `Text` text COLLATE utf8_czech_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+--
+-- Vypisuji data pro tabulku `POS_PRG`
+--
+
+INSERT INTO `POS_PRG` (`ID`, `Nazev`, `Subject`, `Text`) VALUES
+(1, 'Počítačové sítě, vznik, historie, rozdělení, výhody.', 'POS', ''),
+(2, 'Sítě LAN, rozdělení, technické a programové prvky sítí, topologie.', 'POS', NULL),
+(3, 'Model ISO/OSI, úlohy jednotlivých vrstev, aktivní prvky kabeláže versus vrstvy modelu ISO/OSI. Architektura TCP/IP.', 'POS', NULL),
+(4, 'Přenosová média, komunikace v sítích, přístupové metody.', 'POS', NULL),
+(5, 'Standardy síťového hardware – Ethernet a ostatní.', 'POS', NULL),
+(6, 'Bezdrátové sítě. Princip, standard, provedení prvků, režimy komunikace, použití a vlastnosti.', 'POS', NULL),
+(7, 'Adresování v TCP/IP sítích, třídy a zápis IP adres, masky, koncepce dalšího rozvoje.', 'POS', NULL),
+(8, 'Směrování a směrovací protokoly. Směrovače, statické a dynamické směrování, směrovací tabulka a směrovací protokoly.', 'POS', NULL),
+(9, 'Způsoby připojení k Internetu. Úzkopásmové a širokopásmové přípojky. Digitální a optické přípojky.', 'POS', NULL),
+(10, 'EtherChannel, způsoby využití, výhody, použité protokoly, konfigurace.', 'POS', NULL),
+(11, 'OS Windows servery, základní vlastnosti a činnosti, instalace, základy správy systému.', 'POS', NULL),
+(12, 'OS Linux, základní popis, vlastnosti, odlišnost Linuxu od jiných OS, instalace, základy správy systému.', 'POS', ''),
+(13, 'Struktura programu v C#, proměnné, základní typy dat.', 'PRG', ''),
+(14, 'Podmíněný příkaz if-else, switch.', 'PRG', NULL),
+(15, 'Cykly for, foreach, while, do-while.', 'PRG', ''),
+(16, 'Objektově orientovaný přístup, třídy, metody, atributy, konstruktor.', 'PRG', ''),
+(17, 'Dědičnost, polymorfismus, zapouzdření.', 'PRG', ''),
+(18, 'Projekt, řešení, komentáře, chybová hlášení, soubory projektu, ladění.', 'PRG', NULL),
+(19, 'WPF, práce s formuláři.', 'PRG', NULL),
+(20, 'Přehled základních komponent – využití, vlastnosti, události.', 'PRG', NULL),
+(21, 'Tvorba uživatelského rozhraní – menu, dialogová okna, panel nástrojů.', 'PRG', NULL),
+(22, 'Pole jednorozměrné a vícerozměrné.', 'PRG', ''),
+(23, 'Dynamické datové struktury – List, ObservableCollection, Dictionary.', 'PRG', NULL),
+(24, 'Binding, rozhraní INotifyPropertyChange.', 'PRG', NULL),
+(25, 'Práce se soubory.', 'PRG', NULL),
+(26, 'Výjimky', 'PRG', NULL),
+(27, 'WPF – XAML.', 'PRG', NULL),
+(28, 'Vektorová grafika v C#.', 'PRG', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `SWA_POG`
+--
+
+CREATE TABLE `SWA_POG` (
+  `ID` int(11) NOT NULL,
+  `Nazev` mediumtext COLLATE utf8_czech_ci NOT NULL,
+  `Subject` varchar(3) COLLATE utf8_czech_ci DEFAULT NULL,
+  `Text` text COLLATE utf8_czech_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+--
+-- Vypisuji data pro tabulku `SWA_POG`
+--
+
+INSERT INTO `SWA_POG` (`ID`, `Nazev`, `Subject`, `Text`) VALUES
+(1, 'Vektorová grafika. Tvorba základních objektů. Barvy.', 'POG', ''),
+(2, 'Vektorová grafika. Úprava křivek, práce s textem.', 'POG', ''),
+(3, 'Rastrová grafika. Tvorba základních objektů, výběry, barvy, cesty. Práce s textem.', 'POG', ''),
+(4, 'Rastrová grafika. Úprava fotografií.', 'POG', ''),
+(5, 'Základní pojmy z počítačové grafiky.', 'POG', ''),
+(6, '3D modelování v CAD programu.', 'POG', 'solidworks - lineární zobrazení a kruhové pole,zrcadlení, skořepina, žebra, tažení po\r\nkřivce\r\nLinearní zobrazení\r\nlineární zobrazení v kontextu parametrického modelování, což je technika\r\npoužívaná v SolidWorks pro definování vztahů mezi různými prvky modelu. Lineární\r\nzobrazení zde může odkazovat na jednoduché transformace, jako je například zvětšení\r\nnebo zmenšení geometrických prvků podle určených parametrů. kótování\r\nLinearní pole i guess\r\nvytvoří obrazy entity směru 1 a směru nastavíme rozteč směr 1 a rozteč\r\nsměr 2 a počet instancí vytvoří se tedy matice směr 1 směr 2. V solidworksech to\r\npodurčí skici ikdyž by nemělo\r\nPočet instancí\r\nUrčuje počet instancí pole pro Směr č.1. Do tohoto počtu se započítávají i\r\npůvodní prvky a výběry.\r\nObrátit směr odsazení\r\nObrátí směr odsazení pole od referenční geometrie.\r\nkruhové pole\r\nvytvoří obrazy entity na kružnici umístěné na nějaký bod (střed) offset směr 1 a offset\r\nsměr 2. V solidworksech to podurčí skici ikdyž by nemělo.\r\npocet obrazů\r\núhel mezi obrazy - absolutní nebo stejné mezi prvky\r\nvytvářet opakování prvků kolem kruhového tvaru. Stačí vybrat prvek, který chcete\r\nopakovat, vybrat osu rotace a definovat počet a úhel opakování.\r\npříklad: díry na spojovacím dílu trubek, díry na šrouby u kol, kola samotná\r\nZrcadlení = Osová souměrnost\r\nV SolidWorks je funkce zrcadlení často využívána k vytváření symetrických\r\nsoučástí nebo sestav. Postup zrcadlení se liší v závislosti na tom, zda pracujete s částí\r\nsoučásti nebo celou sestavou.\r\nZrcadlení součásti:\r\nOtevřete součást, kterou chcete zrcadlit.\r\nFunkce zrcadlení obvykle najdete v horním panelu nástrojů v záložce \"Features\"\r\n(Funkce). Může být označena jako \"Mirror\" nebo \"Zrcadlit\".\r\nSolidWorks vás požádá, abyste vybrali rovinu(osu), podle které chcete zrcadlit\r\nsoučást. To může být rovina z různých směrů, například XY, YZ nebo ZX, nebo rovina\r\ndefinovaná ve vašem modelu.\r\nMůžete si vybrat, zda chcete zrcadlit pouze funkce nebo celou tělesnou součást.\r\nTaké můžete zvolit, zda chcete zrcadlit na původním místě nebo vytvořit novou\r\nsoučást.\r\nPotvrďte své volby a dokončete funkci zrcadlení.\r\npříklad: řemenice, koleje\r\nSkořepina\r\nV SolidWorks je \"skořepina\" (shell) funkce, která umožňuje vytvořit dutinu\r\nnebo skořepinu uvnitř nebo kolem modelu. Tato funkce je často využívána při\r\nmodelování součástek, kdy je potřeba vytvořit dutinu nebo hmotu s určitou tloušťkou.\r\nPro vytvoření skořepiny v SolidWorks postupujte takto:\r\nOtevřete model, ke kterému chcete přidat skořepinu.\r\nVyberte možnost \"Skořepina\" (Shell), která se obvykle nachází v panelu s funkcemi\r\nmodelování.\r\nVyberte stěnu nebo povrch, který chcete použít jako základ pro skořepinu.\r\nZadejte požadovanou tloušťku skořepiny.\r\nMůžete také vybrat, zda chcete vytvořit skořepinu uvnitř nebo vně modelu.\r\nPotvrďte své nastavení a dokončete funkci.\r\nTímto způsobem můžete vytvořit dutinu nebo skořepinu uvnitř nebo kolem\r\nvašeho modelu, což je užitečné při návrhu různých druhů výrobků, jako jsou například\r\nplastové díly, pouzdra elektroniky nebo odlitky.\r\nŽebra\r\nprvek ktery slouzi jako vystuha (zebrovany motor, kridla, atd.)\r\nmnoho typů ukonceni ktere nam komplikuji zivot\r\nŽebro je zvláštní typ vysunutého prvku vytvořeného z otevřených nebo\r\nuzavřených načrtnutých obrysů. Přidává materiál zadané tloušťky v zadaném směru\r\nmezi obrysem a existujícím dílem. Prvek žebra můžete vytvořit buď pomocí\r\nsamostatných nebo násobných skic. Prvky žeber také můžete vytvořit pomocí úkosu\r\nnebo výběrem odkazového obrysu pro úkos.\r\nNačrtněte obrys: Na rovině, která protíná váš díl nebo je rovnoběžná nebo svírá\r\nurčitý úhel s existující rovinou, nakreslete obrys, který chcete použít jako prvek žebra.\r\nVytvořte žebro: Klepněte na možnost Žebro (najdete ji v panelu nástrojů Prvky)\r\nnebo přejděte na nabídku Vložit > Prvky > Žebro. Nastavte možnosti v\r\nPropertyManageru a potvrďte tlačítkem OK\r\nTažení po křivce\r\nPři tažení se přesunutím profilu (řezu) po zvolené trase vytvoří základ,\r\nvýstupek, řez nebo povrch. Tažení může být jednoduché nebo komplexní.\r\nPři vytváření geometrie tažení software vytvoří řadu přechodných řezů\r\nvytvořených replikováním profilu v různých polohách podél trasy. Přechodné řezy se\r\nvzájemně sloučí. Prvky tažení mohou obsahovat další parametry, jako jsou vodicí\r\nkřivky, možnosti orientace profilu a natočení, které umožňují vytvoření množství\r\nrůzných tvarů.\r\npar úvodní vět o solidworks\r\nTento software je široce používán v průmyslu pro návrh a modelování\r\nrůzných výrobků od mechanických součástek a strojů po elektroniku a stavební\r\nkonstrukce. SolidWorks poskytuje uživatelům prostředí pro tvorbu 3D modelů, včetně\r\nmožností modelování, kreslení, simulace a dokumentace výrobků. Mezi jeho klíčové\r\nfunkce patří:\r\nModelování: SolidWorks nabízí širokou škálu nástrojů pro tvorbu 3D modelů, včetně\r\nextruze, řezání, vrtnutí, zakřivení, a dalších.\r\nKreslení: Uživatelé mohou vytvářet 2D výkresy součástek a sestav včetně rozměrů,\r\ntolerancí a dalších technických informací.\r\nSestavy: SolidWorks umožňuje vytvářet sestavy, které obsahují více součástek a\r\numožňuje interakci mezi nimi, včetně pohybu, omezení a detekce kolizí.\r\nSimulace: Software poskytuje nástroje pro analýzu a simulaci chování výrobků v\r\nrůzných podmínkách a prostředích, včetně pevnostní analýzy, proudění tekutin,\r\ntepelných simulací a dalších.\r\nDokumentace: SolidWorks umožňuje generovat výkresy, technické dokumentace a\r\nvýstupy pro výrobu a montáž výrobků.\r\ntemín: 12.3.2024\r\nhttps://help.solidworks.com/2021/czech/SolidWorks/sldworks/c_Patterns_and_Mirrorin\r\ng_top.htm?id=b01db69085b94bc4a133ede0a31b87c4#Pg0\r\nhttps://help.solidworks.com/2021/czech/SolidWorks/sldworks/c_Shells_Folder.htm?id=0\r\naab044ec94845b38a14c55d27b2170e#Pg0\r\nhttps://help.solidworks.com/2021/czech/SolidWorks/sldworks/c_Ribs_Folder.htm?id=ab\r\nd418d45c634c4981902cca9bc6bb00#Pg0'),
+(7, 'Blender – tvorba modelů a 3D animace.', 'POG', ''),
+(8, 'Úprava videa. Nahrávání, editace a export videa.', 'POG', ''),
+(9, 'Animovaná 2D grafika. Animace snímek po snímku, dopočítaná animace, zvuky.', 'POG', ''),
+(10, 'Historie výpočetní techniky.', 'SWA', ''),
+(11, 'Hardware. Základní parametry osobních počítačů.', 'SWA', ''),
+(12, 'Software – rozdělení, kategorie a licence.', 'SWA', NULL),
+(13, 'Operační systém – správa a ovládání OS.', 'SWA', ' '),
+(14, 'Bezpečnost a zálohování. Nástroje a zásady.', 'SWA', NULL),
+(15, 'Internet a služby.', 'SWA', ''),
+(16, 'Práce s textovým editorem. Tvorba dokumentu, formátování, stylování, struktury a objekty.', 'SWA', NULL),
+(17, 'Práce s tabulkovým procesorem. Tvorba tabulky, řazení a filtrování dat, funkce, grafy.', 'SWA', NULL),
+(18, 'Práce v prezentačním programu. Tvorba prezentace, zásady prezentování, vhodný obsah, vkládání multimédií.', 'SWA', NULL),
+(19, 'Práce v databázovém programu. Tvorba databáze – tabulek, dotazů, formulářů a sestav.', 'SWA', NULL),
+(20, 'Webové stránky – HTML a CSS.', 'SWA', NULL),
+(21, 'Dynamické stránky – skriptovací jazyk PHP, JavaScript.', 'SWA', NULL),
+(22, 'Návrh databází – modelování DB a jazyk SQL – příkazy, syntaxe a použití.', 'SWA', ''),
+(23, 'Projektové řízení – činnosti, rezervy, kritická cesta, Ganntův graf, ovládání SW pro plánování činností, SW pro správu verzí, poskytování uživatelské podpory.', 'SWA', '');
+
+--
+-- Klíče pro exportované tabulky
+--
+
+--
+-- Klíče pro tabulku `aktuality`
+--
+ALTER TABLE `aktuality`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Klíče pro tabulku `POS_PRG`
+--
+ALTER TABLE `POS_PRG`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Klíče pro tabulku `SWA_POG`
+--
+ALTER TABLE `SWA_POG`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT pro tabulky
+--
+
+--
+-- AUTO_INCREMENT pro tabulku `aktuality`
+--
+ALTER TABLE `aktuality`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pro tabulku `POS_PRG`
+--
+ALTER TABLE `POS_PRG`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
